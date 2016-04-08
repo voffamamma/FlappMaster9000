@@ -12,8 +12,15 @@ window.Game = (function() {
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.isPlaying = false;
 
+		this.pipe1 = new window.Pipe(this.el.find('.PipeCombo1'), this, 1);
+		this.pipe2 = new window.Pipe(this.el.find('.PipeCombo2'), this, 2);
+		this.pipe3 = new window.Pipe(this.el.find('.PipeCombo3'), this, 3);
+
+
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
+
+		this.Score = 0;
 	};
 
 	/**
@@ -33,7 +40,9 @@ window.Game = (function() {
 
 		// Update game entities.
 		this.player.onFrame(delta);
-
+		this.pipe1.onFrame(delta);
+		this.pipe2.onFrame(delta);
+		this.pipe3.onFrame(delta);
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
 	};
@@ -48,6 +57,11 @@ window.Game = (function() {
 		this.lastFrame = +new Date() / 1000;
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
+
+		$('.Ground').css('-webkit-animation-play-state', 'running');
+		$('.Candy').css('-webkit-animation-play-state', 'running');
+		$('.IceCream').css('-webkit-animation-play-state', 'running');
+		$('.Wings').css('-webkit-animation-play-state', 'running');
 	};
 
 	/**
@@ -55,6 +69,9 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		this.player.reset();
+		this.pipe1.reset();
+		this.pipe2.reset();
+		this.pipe3.reset();
 	};
 
 	/**
@@ -63,6 +80,13 @@ window.Game = (function() {
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
 
+		if(!Controls.getSoundMuted()) {
+
+			var over = document.getElementById('gameover');
+			over.play();
+		}
+
+	//	var ground = this.el.find('.Ground');
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
@@ -73,6 +97,13 @@ window.Game = (function() {
 					scoreboardEl.removeClass('is-visible');
 					that.start();
 				});
+
+		$('.Scoreboard-Score>span').html(this.Score);
+
+		$('.Ground').css('-webkit-animation-play-state', 'paused');
+		$('.Candy').css('-webkit-animation-play-state', 'paused');
+		$('.IceCream').css('-webkit-animation-play-state', 'paused');
+		$('.Wings').css('-webkit-animation-play-state', 'paused');
 	};
 
 	/**
@@ -83,5 +114,3 @@ window.Game = (function() {
 
 	return Game;
 })();
-
-

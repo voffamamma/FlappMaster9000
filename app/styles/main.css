@@ -1,11 +1,119 @@
+.PipeCombo1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7em;
+    height: 57.6em;
+    transform: translateZ(0);
+}
+
+.topPipe1 {
+	position: absolute;
+	top: 0;
+    width: 7em;
+    height: 10;
+    background: url("/images/tubeToUse2.png");
+    background-size: 100%;
+	transform: translateZ(0);
+}
+
+.bottomPipe1 {
+    position: absolute;
+    bottom: 0;
+    width: 7em;
+    height: 30em;
+    background: url("/images/tubeToUse.png");
+    background-size: 100%;
+  	transform: translateZ(0);
+}
+
+.PipeCombo2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7em;
+    height: 57.6em;
+    transform: translateZ(0);
+}
+
+.topPipe2 {
+	position: absolute;
+	top: 0;
+    width: 7em;
+    height: 10em;
+    background: url("/images/tubeToUse2.png");
+    background-size: 100%;
+	transform: translateZ(0);
+}
+
+.bottomPipe2 {
+    position: absolute;
+    bottom: 0;
+    width: 7em;
+	height: 30em;
+    background: url("/images/tubeToUse.png");
+    background-size: 100%;
+  	transform: translateZ(0);
+}
+
+.PipeCombo3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5em;
+    height: 57.6em;
+    transform: translateZ(0);
+}
+
+.topPipe3 {
+	position: absolute;
+	top: 0;
+    width: 5em;
+    height: 15em;
+    background: url("/images/tubeToUse2.png");
+    background-size: 100%;
+	transform: translateZ(0);
+}
+
+.bottomPipe3 {
+    position: absolute;
+    bottom: 0;
+    width: 5em;
+    height: 30em;
+    background: url("/images/tubeToUse.png");
+    background-size: 100%;
+  	transform: translateZ(0);
+}
+
 .Player {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 5em;
 	height: 5em;
-	background: blue;
+	background: url("/images/pig.png");
+	background-size: 100%;
+	transform: translateZ(0);
 }
+
+.Wings {
+ 	position: absolute;
+ 	left: 0.4em;
+ 	top: 1.2em;
+ 	height: 2em;
+ 	width: 3em;
+ 	background-image: url("/images/wings.png");
+	background-size: 120%;
+	background-repeat: no-repeat;
+ 	transform-origin: top left;
+	transform: translateZ(0);
+ 	animation:0.4s flap alternate infinite;
+}
+
+@keyframes flap {
+ 	from { transform: rotateX(0); }
+ 	to { transform: rotateX(180deg); }
+ }
 
 .Scoreboard {
 	position: absolute;
@@ -14,8 +122,11 @@
 	height: 30em;
 	width: 40em;
 	margin-left: -20em;
+	background-image: url("../images/gameover.png");
+	background-size: 30%;
+	background-position: 14em 0em;
+	background-repeat: no-repeat;
 	box-sizing: border-box;
-	background: purple;
 	text-align: center;
 	-webkit-transform: translate(0, -40em);
 	-webkit-transition: -webkit-transform 0.5s;
@@ -24,6 +135,15 @@
 /**
 * Reset transform to animate it into the correct spot on the screen.
 */
+.Score {
+	font-family: 'Comic Sans MS', serif;
+	font-size: 2.4em;
+	color: purple;
+	position: absolute;
+	top: 5em;
+	left: 6em;
+}
+
 .Scoreboard.is-visible {
 	-webkit-transform: none;
 }
@@ -33,32 +153,95 @@
 	font-size: inherit;
 	padding: 0.4em 1.5em;
 	border: 0.2em solid white;
-	background: none;
+
 	cursor: pointer;
 }
 .Scoreboard-restartText {
-font-family: 'Comic Sans MS', serif;
-font-size: 2.4em;
-color: white;
+	font-family: 'Comic Sans MS', serif;
+	font-size: 2.4em;
+	color: white;
 }
+
 body {
-background: black;
+	background: black;
 }
+
 .browsehappy {
-margin: 0.2em 0;
-background: ?#?ccc?;
-color: #000;
-padding: 0.2em 0;
+	margin: 0.2em 0;
+	background: ?#?ccc?;
+	color: #000;
+	padding: 0.2em 0;
 }
 .GameCanvas {
-font-size: 10px;
-position: absolute;
-left: 50%;
-top: 50%;
-width: 102.4em;
-height: 57.6em;
-margin-left: -51.2em;
-margin-top: -28.8em;
-overflow: hidden;
-background: red;
+	font-size: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 102.4em;
+	height: 57.6em;
+	margin-left: -51.2em;
+	margin-top: -28.8em;
+	overflow: hidden;
+	background: url("/images/pinkCloud.png");
+	background-size: 100%;
+}
+
+.Ground {
+	position: absolute;
+	bottom: 0em;
+	height: 10em;
+	width: 180em;
+	background: url("/images/ground.png");
+	background-size: 30%;
+	transform: translateZ(0);
+	-webkit-animation: movingGround 3s linear infinite;
+}
+
+
+@keyframes movingGround {
+	from {left: 0em;}
+	to {left: -50em}
+}
+
+.Candy {
+	position: absolute;
+	background-image: url("/images/lollypop.png");
+	top: 0;
+	right:0;
+	width: 5em;
+	height: 15em;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	transform: translateZ(0);
+	-webkit-animation: movingCandy 10s linear infinite;
+}
+
+@keyframes movingCandy {
+	from { transform: translateX(10em) rotateZ(0deg); }
+  	to { transform: translateX(-100em) rotateZ(1080deg); }
+}
+
+.IceCream {
+	position: absolute;
+	background-image: url("/images/iceCream.png");
+	top: 0;
+	right:0;
+	width: 5em;
+	height: 10em;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	transform: translateZ(0);
+	-webkit-animation: movingIcecream 20s linear infinite;
+}
+
+@keyframes movingIcecream {
+	from { transform: translateX(0em) rotateZ(0deg); }
+  	to { transform: translateX(-100em) rotateZ(360deg); }
+}
+
+.muteButton {
+
+	float: left;
+	width: 6em;
+	height: 6em;
 }

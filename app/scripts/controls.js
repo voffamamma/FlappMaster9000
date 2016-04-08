@@ -6,12 +6,14 @@ window.Controls = (function() {
      * Key codes we're interested in.
      */
     var KEYS = {
-        32: 'space',
-        37: 'left',
-        38: 'up',
-        39: 'right',
-        40: 'down'
+        32: 'space'
     };
+
+    var BUTTONS = {
+        0: 'mouseClick'
+    };
+
+    var soundMuted = false;
 
     /**
      * A singleton class which abstracts all player input,
@@ -22,14 +24,17 @@ window.Controls = (function() {
     var Controls = function() {
         this._didJump = false;
         this.keys = {};
+        this.mouse = {};
         $(window)
             .on('keydown', this._onKeyDown.bind(this))
-            .on('keyup', this._onKeyUp.bind(this));
+            .on('keyup', this._onKeyUp.bind(this))
+            .on('mousedown', this._onKeyDown.bind(this))
+            .on('mouseup', this._onKeyUp.bind(this));
     };
 
     Controls.prototype._onKeyDown = function(e) {
         // Only jump if space wasn't pressed.
-        if (e.keyCode === 32 && !this.keys.space) {
+        if (e.keyCode === 32 && !this.keys.space || e.button === 0) {
             this._didJump = true;
         }
 
@@ -39,12 +44,23 @@ window.Controls = (function() {
             this.keys[keyName] = true;
             return false;
         }
+        if(e.button in BUTTONS){
+            var buttonName = BUTTONS[e.button];
+            this.mouse[buttonName] = true;
+            return false;
+        }
+
     };
 
     Controls.prototype._onKeyUp = function(e) {
         if (e.keyCode in KEYS) {
             var keyName = KEYS[e.keyCode];
             this.keys[keyName] = false;
+            return false;
+        }
+        if (e.button in BUTTONS) {
+            var buttonName = BUTTONS[e.button];
+            this.mouse[buttonName] = false;
             return false;
         }
     };
@@ -55,9 +71,28 @@ window.Controls = (function() {
     Controls.prototype.didJump = function() {
         var answer = this._didJump;
         this._didJump = false;
+
         return answer;
     };
-    
+
+    Controls.prototype.getSoundMuted = function() {
+        
+        return soundMuted;
+    };
+
+    $('.muteButton').on('touchstart click',function(){
+        
+        if(soundMuted){
+            soundMuted = false;
+            $('#audio').trigger('play');
+        }
+        else{
+            soundMuted = true;
+            $('#audio').trigger('pause');
+        }
+    });
+
+
     // Export singleton.
     return new Controls();
 })();
