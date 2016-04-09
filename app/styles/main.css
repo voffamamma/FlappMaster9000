@@ -182,7 +182,7 @@ body {
 	margin-left: -51.2em;
 	margin-top: -28.8em;
 	overflow: hidden;
-	background: url("/images/pinkCloud.png");
+	background: url("/images/pinkCloud.jpg");
 	background-size: 100%;
 }
 
@@ -245,3 +245,90 @@ body {
 	width: 6em;
 	height: 6em;
 }
+
+/*.SaberUpDown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7em;
+    height: 57.6em;
+    transform: translateZ(0);
+}
+
+.SaberTop {
+	position: absolute;
+	top: 0;
+    width: 20em;
+    height: 20;
+    background: url("/Images/saberTop.png");
+    background-size: 100%;
+	transform: translateZ(0);
+}
+
+.SaberBottom {
+    position: absolute;
+    bottom: 0;
+    width: 20em;
+    height: 20em;
+    background: url("/Images/saber.png");
+    background-size: 100%;
+  	transform: translateZ(0);
+}
+
+.SaberUpDown2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7em;
+    height: 57.6em;
+    transform: translateZ(0);
+}
+
+.SaberTop2 {
+	position: absolute;
+	top: 0;
+    width: 20em;
+    height: 20em;
+    background: url("/Images/saberTop.png");
+    background-size: 100%;
+	transform: translateZ(0);
+}
+
+.SaberBottom2 {
+    position: absolute;
+    bottom: 0;
+    width: 20em;
+	height: 20em;
+    background: url("/Images/saber.png");
+    background-size: 100%;
+  	transform: translateZ(0);
+}
+
+.SaberUpDown3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5em;
+    height: 57.6em;
+    transform: translateZ(0);
+}
+
+.SaberTop3 {
+	position: absolute;
+	top: 0;
+    width: 20em;
+    height: 20em;
+    background: url("/Images/saberTop.png");
+    background-size: 100%;
+	transform: translateZ(0);
+}
+
+.SaberBottom3 {
+    position: absolute;
+    bottom: 0;
+    width: 20em;
+    height: 20em;
+    background: url("/Images/saber.png");
+    background-size: 100%;
+  	transform: translateZ(0);
+}*/
