@@ -10,8 +10,6 @@ window.Player = (function() {
 	var GRAVITY = 80;
 //	var INITIAL_POSITION_X = 30;
 //	var INITIAL_POSITION_Y = 25;
-//	var MIDX = (this.game.WORLD_WIDTH / 2)-5;
-//	var MIDY = this.game.WORLD_HEIGHT / 2;
 
 	var Player = function(el, game) {
 		this.el = el;
@@ -48,7 +46,6 @@ window.Player = (function() {
 		this.checkCollisionWithBounds();
 
 		// Update UI
-		//með því að bæta við translateZ þá er þetta element með sér layer á skjákortinu
 		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
 	};
 

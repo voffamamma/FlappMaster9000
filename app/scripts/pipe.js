@@ -2,12 +2,11 @@ window.Pipe = (function() {
     'use strict';
 
     var GAP = 17;
-  //  var SPEED = 10;
+    var SPEED = 10;
     var nextID = 1;
     var position = 102.5;
 
     var Pipe = function(el, game, pipeID) {
-        console.log('er að búa til pípu!');
         this.el = el;
         this.game = game;
         this.pipeID = pipeID;
@@ -17,7 +16,6 @@ window.Pipe = (function() {
     };
 
     Pipe.prototype.reset = function() {
-        console.log('resetar inní pípu!');
         this.randGap();
         nextID = 1;
         if( this.pipeID === 1) {
@@ -32,7 +30,6 @@ window.Pipe = (function() {
     Pipe.prototype.onFrame = function(delta) {
 
         this.position -= delta * 10;
-        //hérna ath ég hvort við seum komin út af skjánum
         if(this.position < -10) {
             this.positon = this.game.WORLD_WIDTH;
         }
@@ -40,14 +37,11 @@ window.Pipe = (function() {
     };
 
     Pipe.prototype.randGap = function() {
-      //set random hæð á neðri pípuna (passa að hús sé ekki minni en 8)
         this.bHeight = Math.floor((Math.random() * (this.game.WORLD_HEIGHT - 8)) - GAP);
         if(this.bHeight < 8) {
             this.bHeight = 8;
         }
-      //set svo hæðina á eftir pípu sem sem totalhæð - neðripípa - gatið
 		this.tHeight = this.game.WORLD_HEIGHT - (this.bHeight + GAP);
-    //kem að lokum hæðinni til skila
 		$('.topPipe' + this.pipeID).height(this.tHeight + 'em');
 		$('.bottomPipe' + this.pipeID).height(this.bHeight + 'em');
     };

@@ -1,4 +1,3 @@
-
 window.Game = (function() {
 	'use strict';
 
@@ -12,9 +11,9 @@ window.Game = (function() {
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.isPlaying = false;
 
-		this.pipe1 = new window.Pipe(this.el.find('.PipeCombo1'), this, 1);
-		this.pipe2 = new window.Pipe(this.el.find('.PipeCombo2'), this, 2);
-		this.pipe3 = new window.Pipe(this.el.find('.PipeCombo3'), this, 3);
+		this.pipe1 = new window.Pipe(this.el.find('.Sabers1'), this, 1);
+		this.pipe2 = new window.Pipe(this.el.find('.Sabers2'), this, 2);
+		this.pipe3 = new window.Pipe(this.el.find('.Sabers3'), this, 3);
 
 
 		// Cache a bound onFrame since we need it each frame.
@@ -59,9 +58,7 @@ window.Game = (function() {
 		this.isPlaying = true;
 
 		$('.Ground').css('-webkit-animation-play-state', 'running');
-		$('.Candy').css('-webkit-animation-play-state', 'running');
-		$('.IceCream').css('-webkit-animation-play-state', 'running');
-		$('.Wings').css('-webkit-animation-play-state', 'running');
+		$('.Cloud').css('-webkit-animation-play-state', 'running');
 	};
 
 	/**
@@ -86,7 +83,6 @@ window.Game = (function() {
 			over.play();
 		}
 
-	//	var ground = this.el.find('.Ground');
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
@@ -101,9 +97,8 @@ window.Game = (function() {
 		$('.Scoreboard-Score>span').html(this.Score);
 
 		$('.Ground').css('-webkit-animation-play-state', 'paused');
-		$('.Candy').css('-webkit-animation-play-state', 'paused');
-		$('.IceCream').css('-webkit-animation-play-state', 'paused');
-		$('.Wings').css('-webkit-animation-play-state', 'paused');
+		$('.Cloud').css('-webkit-animation-play-state', 'paused');
+
 	};
 
 	/**

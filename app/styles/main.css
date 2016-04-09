@@ -1,4 +1,4 @@
-.PipeCombo1 {
+.Sabers1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -7,27 +7,27 @@
     transform: translateZ(0);
 }
 
-.topPipe1 {
+.Sabertop1 {
 	position: absolute;
 	top: 0;
     width: 7em;
     height: 10;
-    background: url("/images/tubeToUse2.png");
-    background-size: 100%;
+    background: url("/images/LightsaberTop.png");
+    background-size: 100% 100%;
 	transform: translateZ(0);
 }
 
-.bottomPipe1 {
+.SaberBottom1 {
     position: absolute;
     bottom: 0;
     width: 7em;
     height: 30em;
-    background: url("/images/tubeToUse.png");
-    background-size: 100%;
+    background: url("/images/LightsaberBottom.png");
+    background-size: 100% 100%;
   	transform: translateZ(0);
 }
 
-.PipeCombo2 {
+.Sabers2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,51 +36,51 @@
     transform: translateZ(0);
 }
 
-.topPipe2 {
+.Sabertop2 {
 	position: absolute;
 	top: 0;
     width: 7em;
     height: 10em;
-    background: url("/images/tubeToUse2.png");
+    background: url("/images/LightsaberTop.png");
     background-size: 100%;
 	transform: translateZ(0);
 }
 
-.bottomPipe2 {
+.SaberBottom2 {
     position: absolute;
     bottom: 0;
     width: 7em;
 	height: 30em;
-    background: url("/images/tubeToUse.png");
+    background: url("/images/LightsaberBottom.png");
     background-size: 100%;
   	transform: translateZ(0);
 }
 
-.PipeCombo3 {
+.Sabers3 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 5em;
+    width: 7em;
     height: 57.6em;
     transform: translateZ(0);
 }
 
-.topPipe3 {
+.Sabertop3 {
 	position: absolute;
 	top: 0;
-    width: 5em;
+    width: 7em;
     height: 15em;
-    background: url("/images/tubeToUse2.png");
+    background: url("/images/LightsaberTop.png");
     background-size: 100%;
 	transform: translateZ(0);
 }
 
-.bottomPipe3 {
+.SaberBottom3 {
     position: absolute;
     bottom: 0;
-    width: 5em;
+    width: 7em;
     height: 30em;
-    background: url("/images/tubeToUse.png");
+    background: url("/images/LightsaberBottom.png");
     background-size: 100%;
   	transform: translateZ(0);
 }
@@ -91,29 +91,10 @@
 	left: 0;
 	width: 5em;
 	height: 5em;
-	background: url("/images/pig.png");
+	background: url("/images/Kenny.png");
 	background-size: 100%;
 	transform: translateZ(0);
 }
-
-.Wings {
- 	position: absolute;
- 	left: 0.4em;
- 	top: 1.2em;
- 	height: 2em;
- 	width: 3em;
- 	background-image: url("/images/wings.png");
-	background-size: 120%;
-	background-repeat: no-repeat;
- 	transform-origin: top left;
-	transform: translateZ(0);
- 	animation:0.4s flap alternate infinite;
-}
-
-@keyframes flap {
- 	from { transform: rotateX(0); }
- 	to { transform: rotateX(180deg); }
- }
 
 .Scoreboard {
 	position: absolute;
@@ -182,7 +163,7 @@ body {
 	margin-left: -51.2em;
 	margin-top: -28.8em;
 	overflow: hidden;
-	background: url("/images/pinkCloud.jpg");
+	background: url("/images/SPBackground.jpg");
 	background-size: 100%;
 }
 
@@ -191,7 +172,7 @@ body {
 	bottom: 0em;
 	height: 10em;
 	width: 180em;
-	background: url("/images/ground.png");
+	background: url("/Images/Flames.png");
 	background-size: 30%;
 	transform: translateZ(0);
 	-webkit-animation: movingGround 3s linear infinite;
@@ -203,9 +184,9 @@ body {
 	to {left: -50em}
 }
 
-.Candy {
+.Cloud {
 	position: absolute;
-	background-image: url("/images/lollypop.png");
+	background-image: url("/Images/Cloud.png");
 	top: 0;
 	right:0;
 	width: 5em;
@@ -213,122 +194,19 @@ body {
 	background-repeat: no-repeat;
 	background-size: 100%;
 	transform: translateZ(0);
-	-webkit-animation: movingCandy 10s linear infinite;
+	-webkit-animation: movingCloud 10s linear infinite;
 }
 
-@keyframes movingCandy {
+@keyframes movingCloud {
 	from { transform: translateX(10em) rotateZ(0deg); }
   	to { transform: translateX(-100em) rotateZ(1080deg); }
-}
-
-.IceCream {
-	position: absolute;
-	background-image: url("/images/iceCream.png");
-	top: 0;
-	right:0;
-	width: 5em;
-	height: 10em;
-	background-repeat: no-repeat;
-	background-size: 100%;
-	transform: translateZ(0);
-	-webkit-animation: movingIcecream 20s linear infinite;
-}
-
-@keyframes movingIcecream {
-	from { transform: translateX(0em) rotateZ(0deg); }
-  	to { transform: translateX(-100em) rotateZ(360deg); }
 }
 
 .muteButton {
 
 	float: left;
-	width: 6em;
-	height: 6em;
+	width: 5em;
+	height: 5em;
 }
 
-/*.SaberUpDown {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 7em;
-    height: 57.6em;
-    transform: translateZ(0);
-}
 
-.SaberTop {
-	position: absolute;
-	top: 0;
-    width: 20em;
-    height: 20;
-    background: url("/Images/saberTop.png");
-    background-size: 100%;
-	transform: translateZ(0);
-}
-
-.SaberBottom {
-    position: absolute;
-    bottom: 0;
-    width: 20em;
-    height: 20em;
-    background: url("/Images/saber.png");
-    background-size: 100%;
-  	transform: translateZ(0);
-}
-
-.SaberUpDown2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 7em;
-    height: 57.6em;
-    transform: translateZ(0);
-}
-
-.SaberTop2 {
-	position: absolute;
-	top: 0;
-    width: 20em;
-    height: 20em;
-    background: url("/Images/saberTop.png");
-    background-size: 100%;
-	transform: translateZ(0);
-}
-
-.SaberBottom2 {
-    position: absolute;
-    bottom: 0;
-    width: 20em;
-	height: 20em;
-    background: url("/Images/saber.png");
-    background-size: 100%;
-  	transform: translateZ(0);
-}
-
-.SaberUpDown3 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5em;
-    height: 57.6em;
-    transform: translateZ(0);
-}
-
-.SaberTop3 {
-	position: absolute;
-	top: 0;
-    width: 20em;
-    height: 20em;
-    background: url("/Images/saberTop.png");
-    background-size: 100%;
-	transform: translateZ(0);
-}
-
-.SaberBottom3 {
-    position: absolute;
-    bottom: 0;
-    width: 20em;
-    height: 20em;
-    background: url("/Images/saber.png");
-    background-size: 100%;
-  	transform: translateZ(0);
-}*/
